@@ -1,0 +1,8 @@
+Add to ~/ .profile to be able to open system files in C9 editor like this: c9 <filename>
+
+
+export EDITOR='fn() {
+    cat $1 > ~/.c9-edit;
+    c9 open --wait ~/.c9-edit;
+    cat ~/.c9-edit > $1;
+} ;fn'
